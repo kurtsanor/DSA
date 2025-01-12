@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class UniqueListManager {
+    public static void main(String[] args) {
+        // Initialize an empty list to store unique integers
+        ArrayList<Integer> uniqueList = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        String choice;
+
+        do {
+            // Prompt user for an integer
+            System.out.print("Enter an integer: ");
+            int num = scanner.nextInt();
+
+            // Check if the integer is already in the list
+            if (uniqueList.contains(num)) {
+                // If found, remove it
+                uniqueList.remove(Integer.valueOf(num));
+                System.out.println(num + " was removed from the list.");
+            } else {
+                // If not found, add it
+                uniqueList.add(num);
+                System.out.println(num + " was added to the list.");
+            }
+
+            // Display the current state of the list
+            System.out.println("Current List: " + uniqueList);
+
+            // Ask if the user wants to continue
+            System.out.print("Do you want to continue? (yes/no): ");
+            choice = scanner.next();
+        } while (choice.equalsIgnoreCase("yes"));
+
+        // Output the final list
+        System.out.println("Final List: " + uniqueList);
+        scanner.close();
+    }
+}
