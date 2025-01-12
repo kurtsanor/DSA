@@ -1,0 +1,19 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueAddDelete {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+
+        // Add elements to the queue
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        System.out.println("Queue after additions: " + queue);
+
+        // Remove elements from the queue
+        int removed = queue.poll(); // Removes the head of the queue
+        System.out.println("Removed element: " + removed);
+        System.out.println("Queue after removal: " + queue);
+    }
+}
