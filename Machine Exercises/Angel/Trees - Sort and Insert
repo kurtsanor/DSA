@@ -1,0 +1,47 @@
+class TreeNode {
+    int data;
+    TreeNode left, right;
+
+    public TreeNode(int data) {
+        this.data = data;
+        this.left = this.right = null;
+    }
+}
+
+public class TreeSort {
+    public static TreeNode insert(TreeNode root, int value) {
+        if (root == null) {
+            return new TreeNode(value); // Create a new node if the tree is empty
+        }
+
+        // Recursively insert into the left or right subtree
+        if (value < root.data) {
+            root.left = insert(root.left, value);
+        } else {
+            root.right = insert(root.right, value);
+        }
+        return root;
+    }
+
+    public static void inorderTraversal(TreeNode root) {
+        if (root == null) return;
+
+        // Traverse the left subtree, root, and then the right subtree
+        inorderTraversal(root.left);
+        System.out.print(root.data + " ");
+        inorderTraversal(root.right);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = null;
+        root = insert(root, 50);
+        root = insert(root, 30);
+        root = insert(root, 70);
+        root = insert(root, 20);
+        root = insert(root, 40);
+
+        // Output the sorted elements using in-order traversal
+        System.out.print("Sorted Tree (In-order Traversal): ");
+        inorderTraversal(root);
+    }
+}
