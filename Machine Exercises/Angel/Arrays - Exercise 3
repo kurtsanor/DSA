@@ -2,20 +2,21 @@ import java.util.Scanner;
 
 public class ArrayInputSum {
     public static void main(String[] args) {
+        // Create a Scanner object for user input
         Scanner scanner = new Scanner(System.in);
 
-        // Initialize array
+        // Initialize an array of size 5
         int[] numbers = new int[5];
         int sum = 0;
 
-        // Prompt user for input
+        // Prompt the user to input 5 integers
         System.out.println("Enter 5 integers:");
         for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = scanner.nextInt();
-            sum += numbers[i]; // Calculate sum
+            numbers[i] = scanner.nextInt(); // Store each input in the array
+            sum += numbers[i]; // Add the input to the sum
         }
 
-        // Output the sum
+        // Print the total sum
         System.out.println("The sum of the array is: " + sum);
     }
 }
