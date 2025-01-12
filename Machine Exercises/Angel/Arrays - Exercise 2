@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ArrayContains {
+    public static void main(String[] args) {
+        // Array initialization
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Input value to search for
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to search for: ");
+        int target = scanner.nextInt();
+
+        // Check if the array contains the value
+        boolean found = false;
+        for (int num : numbers) {
+            if (num == target) {
+                found = true;
+                break;
+            }
+        }
+
+        // Output result
+        if (found) {
+            System.out.println("The array contains " + target);
+        } else {
+            System.out.println("The array does not contain " + target);
+        }
+    }
+}
