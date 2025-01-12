@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class ArrayInputSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize array
+        int[] numbers = new int[5];
+        int sum = 0;
+
+        // Prompt user for input
+        System.out.println("Enter 5 integers:");
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = scanner.nextInt();
+            sum += numbers[i]; // Calculate sum
+        }
+
+        // Output the sum
+        System.out.println("The sum of the array is: " + sum);
+    }
+}
