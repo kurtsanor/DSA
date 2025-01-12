@@ -1,0 +1,44 @@
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class LinkedListSort {
+    public static Node insertSorted(Node head, int value) {
+        Node newNode = new Node(value); // Create a new node
+        if (head == null || head.data >= value) {
+            // Insert at the beginning if the list is empty or the value is smaller
+            newNode.next = head;
+            return newNode;
+        }
+
+        Node current = head;
+        while (current.next != null && current.next.data < value) {
+            current = current.next; // Find the correct position
+        }
+
+        newNode.next = current.next; // Insert the new node
+        current.next = newNode;
+        return head;
+    }
+
+    public static void main(String[] args) {
+        Node head = null; // Start with an empty linked list
+        head = insertSorted(head, 5);
+        head = insertSorted(head, 3);
+        head = insertSorted(head, 7);
+
+        // Output the sorted linked list
+        System.out.print("Sorted Linked List: ");
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+}
