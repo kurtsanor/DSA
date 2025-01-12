@@ -1,0 +1,28 @@
+import java.util.LinkedList;
+
+public class LinkedListOperations {
+    public static void main(String[] args) {
+        // Create a LinkedList and add initial elements
+        LinkedList<String> fruits = new LinkedList<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("cherry");
+
+        // Print the original list
+        System.out.println("Original List: " + fruits);
+
+        // Add an element to the beginning of the list
+        fruits.addFirst("orange");
+        System.out.println("After adding orange: " + fruits);
+
+        // Remove an element from the list
+        fruits.remove("banana");
+        System.out.println("After removing banana: " + fruits);
+
+        // Access and print an element at a specific index
+        System.out.println("Element at index 2: " + fruits.get(2));
+
+        // Print the size of the list
+        System.out.println("Size of the list: " + fruits.size());
+    }
+}
