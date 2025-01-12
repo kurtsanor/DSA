@@ -1,0 +1,22 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueSimulation {
+    public static void main(String[] args) {
+        // Create a queue to simulate customers in a store
+        Queue<String> queue = new LinkedList<>();
+
+        // Add customers to the queue
+        queue.add("Customer 1");
+        queue.add("Customer 2");
+        queue.add("Customer 3");
+
+        // Serve each customer in FIFO order
+        while (!queue.isEmpty()) {
+            System.out.println(queue.poll() + " has been served.");
+        }
+
+        // Check and print whether the queue is empty
+        System.out.println("Is the queue empty? " + queue.isEmpty());
+    }
+}
