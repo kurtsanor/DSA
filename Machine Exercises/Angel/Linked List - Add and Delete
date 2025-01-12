@@ -1,0 +1,56 @@
+public class LinkedListAddDelete {
+    static class Node {
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.data = data;
+        }
+    }
+
+    public static Node addAtHead(Node head, int value) {
+        Node newNode = new Node(value); // Create a new node
+        newNode.next = head; // Point the new node to the current head
+        return newNode; // The new node becomes the head
+    }
+
+    public static Node deleteByValue(Node head, int value) {
+        if (head == null) return null; // Empty list
+
+        if (head.data == value) {
+            // Delete the head node
+            return head.next;
+        }
+
+        Node current = head;
+        while (current.next != null && current.next.data != value) {
+            current = current.next; // Traverse to find the node to delete
+        }
+
+        if (current.next != null) {
+            current.next = current.next.next; // Skip the node to delete
+        }
+        return head;
+    }
+
+    public static void main(String[] args) {
+        Node head = null;
+        head = addAtHead(head, 10);
+        head = addAtHead(head, 20);
+
+        System.out.print("List after additions: ");
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+
+        head = deleteByValue(head, 10);
+        System.out.print("\nList after deletion: ");
+        current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+}
