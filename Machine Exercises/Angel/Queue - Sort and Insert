@@ -1,0 +1,32 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueSort {
+    public static Queue<Integer> sortQueue(Queue<Integer> queue) {
+        // Use a temporary list to sort the queue
+        LinkedList<Integer> tempList = new LinkedList<>(queue);
+        tempList.sort(Integer::compareTo); // Sort the list in ascending order
+
+        // Clear the queue and add the sorted elements back
+        queue.clear();
+        queue.addAll(tempList);
+
+        return queue;
+    }
+
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(3);
+        queue.add(1);
+        queue.add(4);
+
+        // Sort the queue
+        queue = sortQueue(queue);
+
+        // Output the sorted queue
+        System.out.print("Sorted Queue: ");
+        while (!queue.isEmpty()) {
+            System.out.print(queue.poll() + " "); // Remove and print elements
+        }
+    }
+}
