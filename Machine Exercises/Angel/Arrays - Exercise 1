@@ -1,15 +1,15 @@
 public class ArraySum {
     public static void main(String[] args) {
-        // Array initialization
+        // Initialize an array with the given elements
         int[] numbers = {25, 4, 16, 9, 10};
         int sum = 0;
 
-        // Loop to calculate the sum
+        // Loop through the array and calculate the sum
         for (int num : numbers) {
-            sum += num;
+            sum += num; // Add each element to the sum
         }
 
-        // Output the sum
+        // Print the total sum
         System.out.println("The sum of the array is: " + sum);
     }
 }
