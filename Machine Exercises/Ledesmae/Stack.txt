@@ -1,0 +1,41 @@
+import java.util.Stack;
+
+public class ParenthesesBalanceChecker {
+    public static void main(String[] args) {
+        String parentheses1 = "((()))";
+        String parentheses2 = "(()())";
+        String parentheses3 = "((())";
+        String parentheses4 = "()";
+
+        // Check if the parentheses in each string are balanced
+        System.out.println("Is parentheses1 balanced? " + isBalanced(parentheses1)); // true
+        System.out.println("Is parentheses2 balanced? " + isBalanced(parentheses2)); // true
+        System.out.println("Is parentheses3 balanced? " + isBalanced(parentheses3)); // false
+        System.out.println("Is parentheses4 balanced? " + isBalanced(parentheses4)); // true
+    }
+
+    public static boolean isBalanced(String parentheses) {
+        Stack<Character> stack = new Stack<>();
+
+        // Iterate through each character in the string
+        for (int i = 0; i < parentheses.length(); i++) {
+            char currentChar = parentheses.charAt(i);
+
+            // If the character is an opening parenthesis, push it onto the stack
+            if (currentChar == '(') {
+                stack.push(currentChar);
+            }
+            // If the character is a closing parenthesis, pop from the stack if there's a matching opening parenthesis
+            else if (currentChar == ')') {
+                // If the stack is empty, it means there's no matching opening parenthesis
+                if (stack.isEmpty()) {
+                    return false; // Unbalanced
+                }
+                stack.pop(); // Pop the matching opening parenthesis
+            }
+        }
+
+        // If the stack is empty, all opening parentheses had matching closing parentheses
+        return stack.isEmpty();
+    }
+}
