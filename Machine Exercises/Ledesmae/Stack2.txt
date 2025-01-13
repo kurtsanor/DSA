@@ -1,0 +1,21 @@
+import java.util.Stack;
+
+public class StackOperations {
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack<>();
+
+        // Push elements onto the stack
+        stack.push("Alice");
+        stack.push("Bob");
+        stack.push("Charlie");
+
+        // Pop elements from the stack and print them
+        System.out.println("Popped elements:");
+        System.out.println(stack.pop()); // Charlie
+        System.out.println(stack.pop()); // Bob
+        System.out.println(stack.pop()); // Alice
+
+        // Check if the stack is empty
+        System.out.println("Is the stack empty? " + stack.isEmpty()); // true
+    }
+}
