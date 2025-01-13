@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class ListOperations {
+    public static void main(String[] args) {
+        // Create a list with the elements: apple, banana, and cherry
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("cherry");
+
+        // Print the list using println
+        System.out.println("Original list: " + fruits);
+
+        // Add orange to the beginning of the list
+        fruits.add(0, "orange");
+
+        // Print the list again
+        System.out.println("List after adding orange: " + fruits);
+
+        // Remove an element from the list (removes "banana")
+        fruits.remove("banana");
+
+        // Print the list again
+        System.out.println("List after removing 'banana': " + fruits);
+
+        // Get an element at a specific index (index 1)
+        String elementAtIndex1 = fruits.get(1);
+        System.out.println("Element at index 1: " + elementAtIndex1);
+
+        // Print the size of the list
+        System.out.println("Size of the list: " + fruits.size());
+    }
+}
