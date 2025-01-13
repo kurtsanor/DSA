@@ -1,0 +1,58 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class StoreQueueSimulation {
+
+    public static void main(String[] args) {
+        // Create a queue to represent the line at the store/bank
+        Queue<String> line = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        // Menu for simulating customers joining the line and being served
+        while (true) {
+            System.out.println("\n----- Store/Bank Queue Simulation -----");
+            System.out.println("1. Join the line");
+            System.out.println("2. Serve the next customer");
+            System.out.println("3. View the line");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // consume the newline character
+
+            switch (choice) {
+                case 1:
+                    // Customer joins the line
+                    System.out.print("Enter customer's name: ");
+                    String customerName = scanner.nextLine();
+                    line.add(customerName); // add the customer to the line
+                    System.out.println(customerName + " has joined the line.");
+                    break;
+                case 2:
+                    // Serve the next customer
+                    if (!line.isEmpty()) {
+                        String servedCustomer = line.poll(); // serve the customer (remove from the front of the queue)
+                        System.out.println("Serving " + servedCustomer + "...");
+                    } else {
+                        System.out.println("No customers in line to serve.");
+                    }
+                    break;
+                case 3:
+                    // Display the current line
+                    if (line.isEmpty()) {
+                        System.out.println("The line is empty.");
+                    } else {
+                        System.out.println("Current line: " + line);
+                    }
+                    break;
+                case 4:
+                    // Exit the simulation
+                    System.out.println("Exiting the simulation.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
