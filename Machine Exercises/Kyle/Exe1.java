@@ -15,4 +15,4 @@ public class SumArray {
         // Print the result
         System.out.println("The sum of the array elements is: " + sum);
     }
-}
+} 
