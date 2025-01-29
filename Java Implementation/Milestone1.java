@@ -72,6 +72,21 @@ public class Milestone1 {
         System.out.println("Stock with engine number " + engineNumber + " not found.");
         return null;
     }
+    public void updateStock(String engineNumber, String newStockLabel, String newStockBrand, String newStatus) {
+        // Traverse the list to find the stock
+        for (Stock currentStock : stocks) {
+            if (currentStock.engineNumber.equals(engineNumber)) {
+                // Update stock details
+                currentStock.label = newStockLabel;
+                currentStock.brand = newStockBrand;
+                currentStock.status = newStatus;
+                System.out.println("Stock with engine number "+engineNumber +" updated successfully.");
+                return;
+            }
+        }
+        // If stock is not found
+        System.out.println("Stock with engine number "+engineNumber +" not found.");
+    }
 
 
 }
